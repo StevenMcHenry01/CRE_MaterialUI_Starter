@@ -1,17 +1,23 @@
 import React from 'react'
 import TopLayout from './components/Layout'
-import Programmer from './components/Shape.so/Programmer'
-import { Container, Box } from '@material-ui/core'
+import { Container, useTheme } from '@material-ui/core'
+import styled from 'styled-components'
 
 function App() {
+  const theme = useTheme()
+
+  // STYLING
+
+  const MainContentContainerStyled = styled(Container)`
+    padding: 2rem 0;
+  `
+
+  // ~ COMPONENT
   return (
     <TopLayout>
-      <Container>
-        <Box>
-          <div>Hello</div>
-          <Programmer />
-        </Box>
-      </Container>
+      <MainContentContainerStyled maxWidth='sm'>
+        <div>Hello</div>
+      </MainContentContainerStyled>
     </TopLayout>
   )
 }
