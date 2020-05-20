@@ -1,9 +1,9 @@
-import { red } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
+import { grey } from '@material-ui/core/colors';
 
-// A custom theme for this app
-const theme = createMuiTheme({
+export const lightTheme = createMuiTheme({
   palette: {
+    type: 'light',
     common: {
       black: '#1c181d',
       white: '#FFFFFF',
@@ -19,12 +19,62 @@ const theme = createMuiTheme({
       main: '#ffd166'
     },
     error: {
-      main: red.A400,
+      main: '#ff1744',
     },
-    background: {
-      default: '#fff',
+    switchable: {
+      background: '#fff',
+      menuButtonBackground: '#262626',
+      menuButtonIcon: grey[400]
+    }
+  },
+  overrides: {
+    // needed for chrome yellow autofill
+    MuiInputBase: {
+      input: {
+        '&:-webkit-autofill': {
+          transitionDelay: '9999s',
+          transitionProperty: 'background-color, color',
+        },
+      },
     },
   },
 });
 
-export default theme;
+export const darkTheme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    common: {
+      black: '#1c181d',
+      white: '#FFFFFF',
+      eggshell: '#f1f1e1'
+    },
+    primary: {
+      main: '#27AAE1'
+    },
+    secondary: {
+      main: '#f0544f',
+    },
+    tertiary: {
+      main: '#ffd166'
+    },
+    error: {
+      main: '#ff1744',
+    },
+    switchable: {
+      background: '#1f1f1f',
+      menuButtonBackground: grey[400],
+      menuButtonIcon: '#262626'
+    }
+  },
+  overrides: {
+    // needed for chrome yellow autofill
+    MuiInputBase: {
+      input: {
+        '&:-webkit-autofill': {
+          transitionDelay: '9999s',
+          transitionProperty: 'background-color, color',
+        },
+      },
+    },
+  },
+});

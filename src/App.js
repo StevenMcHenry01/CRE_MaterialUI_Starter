@@ -1,25 +1,41 @@
-import React from 'react'
-import TopLayout from './components/Layout'
-import { Container, useTheme } from '@material-ui/core'
+// third party imports
+import React, { useState } from 'react'
+import { Container } from '@material-ui/core'
 import styled from 'styled-components'
+import { ThemeProvider } from '@material-ui/core/styles'
+
+// my imports
+import TopLayout from './components/wrappers/TopLayout'
+import Navbar from './components/header/Navbar'
+import { Routes } from './Routes'
+import { lightTheme, darkTheme } from './styles/theme'
 
 function App() {
-  const theme = useTheme()
+  const [lightThemeActivated, setLightThemeActivated] = useState(true)
 
-  // STYLING
-
-  const MainContentContainerStyled = styled(Container)`
-    padding: 2rem 0;
-  `
+  const toggleTheme = () => {
+    setLightThemeActivated(!lightThemeActivated)
+  }
 
   // ~ COMPONENT
   return (
-    <TopLayout>
-      <MainContentContainerStyled maxWidth='sm'>
-        <div>Hello</div>
-      </MainContentContainerStyled>
-    </TopLayout>
+    <ThemeProvider theme={lightThemeActivated ? lightTheme : darkTheme}>
+      <TopLayout>
+        <Navbar
+          toggleTheme={toggleTheme}
+          lightThemeActivated={lightThemeActivated}
+        />
+        <MainContentContainerStyled maxWidth='md'>
+          <Routes />
+        </MainContentContainerStyled>
+      </TopLayout>
+    </ThemeProvider>
   )
 }
 
 export default App
+
+// STYLING
+const MainContentContainerStyled = styled(Container)`
+  padding: 2rem 1rem;
+`
