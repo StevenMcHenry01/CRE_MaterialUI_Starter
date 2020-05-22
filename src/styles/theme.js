@@ -6,6 +6,7 @@ export const lightTheme = createMuiTheme({
     type: 'light',
     common: {
       black: '#1c181d',
+      darkGrey: '#262626',
       white: '#FFFFFF',
       eggshell: '#f1f1e1'
     },
@@ -24,7 +25,8 @@ export const lightTheme = createMuiTheme({
     switchable: {
       background: '#fff',
       menuButtonBackground: '#262626',
-      menuButtonIcon: grey[400]
+      menuButtonIcon: grey[400],
+      mobileLinkText: grey[600]
     }
   },
   overrides: {
@@ -45,6 +47,7 @@ export const darkTheme = createMuiTheme({
     type: 'dark',
     common: {
       black: '#1c181d',
+      darkGrey: '#262626',
       white: '#FFFFFF',
       eggshell: '#f1f1e1'
     },
@@ -63,7 +66,8 @@ export const darkTheme = createMuiTheme({
     switchable: {
       background: '#1f1f1f',
       menuButtonBackground: grey[400],
-      menuButtonIcon: '#262626'
+      menuButtonIcon: '#262626',
+      mobileLinkText: grey[100]
     }
   },
   overrides: {

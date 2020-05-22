@@ -6,7 +6,7 @@ import { ThemeProvider } from '@material-ui/core/styles'
 
 // my imports
 import TopLayout from './components/wrappers/TopLayout'
-import Navbar from './components/header/Navbar'
+import Navbar from './components/header/navbar/Navbar'
 import { Routes } from './Routes'
 import { lightTheme, darkTheme } from './styles/theme'
 
