@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from 'react'
+import * as React from 'react'
+import { lazy, Suspense } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Loading from './components/utils/Loading'
 import { CenteredDiv } from './styles/utils/CenteredDiv'

@@ -1,11 +1,11 @@
 // 3rd party imports
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { grey } from '@material-ui/core/colors'
 import { red } from '@material-ui/core/colors'
 
-const BrowserLinkActive = ({ children, to }) => (
+const BrowserLinkActive = ({ children, to }: any) => (
   <NavLinkStyled
     exact
     activeStyle={{

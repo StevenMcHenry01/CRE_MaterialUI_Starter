@@ -1,10 +1,10 @@
 // 3rd party imports
-import React from 'react'
+import * as React from 'react'
 
 // My imports
 
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div>Welcome to the home Page</div>
   )

@@ -1,5 +1,5 @@
 // 3rd party imports
-import React from 'react'
+import * as React from 'react'
 
 // My imports
 

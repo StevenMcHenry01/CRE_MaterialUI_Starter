@@ -4,7 +4,7 @@ import { grey } from '@material-ui/core/colors';
 export const lightTheme = createMuiTheme({
   palette: {
     type: 'light',
-    common: {
+    frequent: {
       black: '#1c181d',
       darkGrey: '#262626',
       white: '#FFFFFF',
@@ -45,7 +45,7 @@ export const lightTheme = createMuiTheme({
 export const darkTheme = createMuiTheme({
   palette: {
     type: 'dark',
-    common: {
+    frequent: {
       black: '#1c181d',
       darkGrey: '#262626',
       white: '#FFFFFF',

@@ -1,10 +1,10 @@
 // 3rd party imports
-import React from 'react'
+import * as React from 'react'
 
 // My imports
 
 
-const OtherPage = () => {
+const OtherPage: React.FC = () => {
   return (
     <div>Welcome to the other page on your site</div>
   )

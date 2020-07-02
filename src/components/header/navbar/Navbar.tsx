@@ -1,20 +1,16 @@
 // 3rd party imports
-import React, { useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 import {
   TopAppBar,
   TopAppBarRow,
   TopAppBarSection,
   TopAppBarTitle,
-  TopAppBarFixedAdjust
+  TopAppBarFixedAdjust,
 } from '@rmwc/top-app-bar'
 import '@rmwc/top-app-bar/styles'
-import {
-  Typography,
-  useTheme,
-  Fab,
-  Drawer
-} from '@material-ui/core'
-import {grey} from '@material-ui/core/colors'
+import { Typography, useTheme, Fab, Drawer } from '@material-ui/core'
+import { grey } from '@material-ui/core/colors'
 import styled from 'styled-components'
 import { useWindowWidth } from '@react-hook/window-size'
 
@@ -27,9 +23,12 @@ import MenuIcon from '@material-ui/icons/Menu'
 import BrowserLinks from './Links/BrowserLinks'
 import MobileLinks from './Links/MobileLinks'
 
+interface ThemeOptions {
+  toggleTheme: () => void
+  lightThemeActivated: boolean
+}
 
-
-const Navbar = ({ toggleTheme, lightThemeActivated }) => {
+const Navbar = ({ toggleTheme, lightThemeActivated }: ThemeOptions) => {
   const theme = useTheme()
   const windowWidth = useWindowWidth({ wait: 75 })
 
@@ -41,14 +40,11 @@ const Navbar = ({ toggleTheme, lightThemeActivated }) => {
 
   return (
     <React.Fragment>
-      <TopAppBar style={{ backgroundColor: theme.palette.common.darkGrey }}>
+      <TopAppBar style={{ backgroundColor: theme.palette.frequent.darkGrey }}>
         <TopAppBarRow>
           <TopAppBarSection>
             <TopAppBarTitle>
-              <Typography
-                variant='h4'
-                style={{ color: grey[400] }}
-              >
+              <Typography variant='h4' style={{ color: grey[400] }}>
                 Site Title
               </Typography>
             </TopAppBarTitle>
@@ -61,9 +57,7 @@ const Navbar = ({ toggleTheme, lightThemeActivated }) => {
                 <EmojiObjectsIcon style={{ color: grey[400] }} />
               )}
             </ButtonStyled>
-            {windowWidth > theme.breakpoints.values.sm && (
-              <BrowserLinks />
-            )}
+            {windowWidth > theme.breakpoints.values.sm && <BrowserLinks />}
           </TopAppBarSection>
         </TopAppBarRow>
       </TopAppBar>
@@ -85,7 +79,7 @@ const Navbar = ({ toggleTheme, lightThemeActivated }) => {
             open={drawerOpen}
             onClose={handleDrawerToggle}
           >
-            <MobileLinks handleDrawerToggle={handleDrawerToggle}/>
+            <MobileLinks handleDrawerToggle={handleDrawerToggle} />
           </Drawer>
         </React.Fragment>
       )}

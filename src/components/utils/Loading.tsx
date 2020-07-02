@@ -1,18 +1,23 @@
 // 3rd party imports
-import React from 'react'
+import * as React from 'react'
 import { CircularProgress } from '@material-ui/core'
 
 // My imports
 import { useDelayedRender } from '../../hooks/useDelayedRender'
 
-const DelayedRender = ({ delay, children }) =>
+interface DelayOptions {
+  delay: number
+  children: any
+}
+
+const DelayedRender = ({ delay, children }: DelayOptions) =>
   useDelayedRender(delay)(() => children)
 
-const Loading = ({ color = 'primary', size = 60 }) => {
+const Loading = ({ size = 60 }) => {
   return (
     // delay the loading spinner by 500 milliseconds
     <DelayedRender delay={500}>
-      <CircularProgress size={size} color={color} />
+      <CircularProgress size={size} color='primary' />
     </DelayedRender>
   )
 }

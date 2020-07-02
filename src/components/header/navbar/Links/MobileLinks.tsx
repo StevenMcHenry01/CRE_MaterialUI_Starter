@@ -1,18 +1,12 @@
 // 3rd party imports
-import React from 'react'
-import {
-  Typography,
-  List,
-  ListItem,
-  Divider,
-  useTheme,
-} from '@material-ui/core'
+import * as React from 'react'
+import { Typography, Divider, useTheme } from '@material-ui/core'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 // My imports
 
-const MobileLinks = ({ handleDrawerToggle }) => {
+const MobileLinks = ({ handleDrawerToggle }: any) => {
   const theme = useTheme()
 
   const MobileLinkStyle = {
@@ -21,27 +15,29 @@ const MobileLinks = ({ handleDrawerToggle }) => {
   }
 
   return (
-    <List>
+    <ul>
       <ListItemStyled onClick={handleDrawerToggle}>
         <NavLink style={MobileLinkStyle} to='/'>
-          <Typography>Home</Typography>
+          <Typography style={{textAlign: 'center'}}>Home</Typography>
         </NavLink>
       </ListItemStyled>
       <Divider />
       <ListItemStyled onClick={handleDrawerToggle}>
         <NavLink style={MobileLinkStyle} to='/otherPage'>
-          <Typography>Other Page</Typography>
+          <Typography style={{textAlign: 'center'}}>Other Page</Typography>
         </NavLink>
       </ListItemStyled>
-    </List>
+    </ul>
   )
 }
 
 export default MobileLinks
 
 // STYLING
-const ListItemStyled = styled(ListItem)`
+const ListItemStyled = styled.li`
+  text-decoration: none;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
-  margin: 1rem 0;
+  padding: 1rem 0;
 `

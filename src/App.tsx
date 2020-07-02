@@ -1,6 +1,6 @@
 // third party imports
-import React, { useState } from 'react'
-import { Container } from '@material-ui/core'
+import * as React from 'react'
+import {useState} from 'react'
 import styled from 'styled-components'
 import { ThemeProvider } from '@material-ui/core/styles'
 
@@ -25,9 +25,11 @@ function App() {
           toggleTheme={toggleTheme}
           lightThemeActivated={lightThemeActivated}
         />
-        <MainContentContainerStyled maxWidth='md'>
-          <Routes />
-        </MainContentContainerStyled>
+        <div style={{width: '100%'}}>
+          <MainContentContainerStyled>
+            <Routes />
+          </MainContentContainerStyled>
+        </div>
       </TopLayout>
     </ThemeProvider>
   )
@@ -36,6 +38,8 @@ function App() {
 export default App
 
 // STYLING
-const MainContentContainerStyled = styled(Container)`
+const MainContentContainerStyled = styled.div`
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 2rem 1rem;
 `
